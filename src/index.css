@@ -1,13 +1,263 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: ObjectSansRegular;
+  font-style: normal;
+  src: url("./assets/fonts/ObjectSansRegular.woff") format("woff");
+  font-display: swap;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: ObjectSansMedium;
+  font-style: normal;
+  src: url("./assets/fonts/ObjectSansMedium.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: ObjectSansBold;
+  font-style: normal;
+  src: url("./assets/fonts/ObjectSansBold.woff") format("woff");
+  font-display: swap;
+}
+
+/*
+=============== 
+Variables
+===============
+*/
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+
+.navbar {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.navbar-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-content p {
+  font-family: ObjectSansBold;
+  color: #1e1e1e;
+  font-size: 20px;
+  margin: 0;
+  padding-top: 2px;
+}
+
+.btn {
+  background: #1e1e1e;
+  font-size: 14px;
+  color: #fff;
+  width: 100px;
+  height: 38px;
+  display: inline-block;
+  /* transition: var(--transition); */
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  border: none;
+  font-family: ObjectSansBold;
+}
+/* .btn:hover {
+  color: var(--clr-primary-5);
+  background: var(--clr-primary-8);
+  border-color: var(--clr-primary-8);
+} */
+/* section */
+.section {
+  padding: 5rem 0;
+}
+
+.section-center {
+  margin: 0 auto;
+  margin-top: 120px;
+  text-align: center;
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+/*
+=============== 
+Lorem Ipsum
+===============
+*/
+h3 {
+  font-size: 96px;
+  margin-bottom: 20px;
+  color: #1e1e1e;
+  text-align: center;
+  font-family: ObjectSansBold;
+}
+
+.section-center p {
+  font-family: ObjectSansRegular;
+  font-size: 18px;
+  color: #494949;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.8em;
+  margin-bottom: 60px;
+}
+
+.lorem-form {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+label {
+  font-size: 20px;
+  color: #1e1e1e;
+  font-family: ObjectSansMedium;
+}
+input {
+  padding: 8px;
+  border: 1px solid #d6d6d6;
+  font-size: 16px;
+  font-family: ObjectSansRegular;
+  height: 38px;
+  width: 80px;
+  border-radius: 8px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+button {
+  background: var(--clr-primary-10);
+}
+.result {
+  margin-bottom: 2rem;
+}
+
+.lorem-text {
+  font-family: ObjectSansRegular;
+  font-size: 16px;
+  color: #494949;
+  text-align: center;
+  line-height: 1.8em;
+  padding-bottom: 80px;
+  margin: 0 auto;
+}
+
+.lorem-text p {
+  max-width: 800px;
+}
+
+@media screen and (max-width: 576px) {
+  h3 {
+    font-size: 60px;
+    line-height: 1em;
+  }
+
+  .section-center p {
+    font-size: 16px;
+  }
+}
+
+.footer {
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #f5f5f7;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-content p {
+  font-family: ObjectSansRegular;
+  color: #6e6e73;
+  font-size: 14px;
+  margin: 0;
+  padding-top: 2px;
+}
+
+.footer-content a {
+  color: #1d1d1f;
+  font-family: ObjectSansMedium;
 }
